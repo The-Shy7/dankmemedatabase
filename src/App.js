@@ -7,6 +7,22 @@ import { Search } from '@material-ui/icons';
 
 function App() {
   const [text, setText] = useState('')
+  const [memes, setMemes] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  async function getMemes(){
+    setLoading(true)
+    setMemes([])
+    const key = ''
+    let url = 'https://api.giphy.com/v1/gifs/search?'
+    url += 'api_key='+key
+    url += '&q='+text
+    const r = await fetch(url)
+    const body = await r.json()
+    setMemes(body.data)
+    setText('')
+    setLoading(false)
+  }
 
   return (
     <div className="App">
