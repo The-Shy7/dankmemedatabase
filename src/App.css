@@ -49,3 +49,7 @@
   white-space: nowrap;
 }
 
+.meme:hover .meme-title{
+  display:block;
+}
+
