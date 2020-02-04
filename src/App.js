@@ -36,4 +36,11 @@ function App() {
   );
 }
 
+function Meme({images, title}){
+  return <div className="meme">
+    <img src={images.fixed_height.url} alt="meme" />
+    <div className="meme-title">{title}</div>
+  </div>
+}
+
 export default App;
