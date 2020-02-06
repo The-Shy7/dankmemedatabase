@@ -52,11 +52,13 @@ function App() {
   );
 }
 
-function Meme({images, title}){
-  return <div className="meme">
-    <img src={images.fixed_height.url} alt="meme" />
+function Meme({images, title}) {
+  const url = images.fixed_height.url
+  
+  return (<div className="meme" onClick={()=>window.open(url, '_blank')}>
     <div className="meme-title">{title}</div>
-  </div>
+    {<img alt="meme" src={url} />}
+  </div>)
 }
 
 export default App;
